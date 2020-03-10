@@ -44,6 +44,7 @@
     <Compile Include="Entities\Url.cs" />
     <Compile Include="Exceptions\RuntimeException.cs" />
     <Compile Include="Factories\EndPointFactory.cs" />
+    <Compile Include="Interfaces\IDownloadStrategy.cs" />
     <Compile Include="Interfaces\IStatusCode.cs" />
     <Compile Include="Interfaces\IUrl.cs" />
     <Compile Include="Manager.cs" />
