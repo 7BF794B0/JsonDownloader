@@ -1,5 +1,4 @@
-﻿using System;
-namespace JsonDownloader.Interfaces
+﻿namespace JsonDownloader.Interfaces
 {
     interface IStatusCode
     {
