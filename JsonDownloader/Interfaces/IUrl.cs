@@ -4,6 +4,6 @@ namespace JsonDownloader.Interfaces
 {
     interface IUrl
     {
-        Url GetUrl();
+        Url GetUrlContext();
     }
 }
