@@ -2,16 +2,11 @@
 {
     class Url
     {
-        private string url;
+        public string UrlStr { get; private set; }
 
-        public string GetUrl()
+        public Url(string path)
         {
-            return url;
-        }
-
-        private void SetUrl(string value)
-        {
-            url = value;
+            UrlStr = path;
         }
     }
 }

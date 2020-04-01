@@ -6,7 +6,8 @@ namespace JsonDownloader.Implementations
     {
         public IUrl GetUrl()
         {
-            throw new System.NotImplementedException();
+            IUrl url = new EndPointContextImplementation();
+            return url;
         }
 
         public IDownloadStrategy GetDownloadStrategy()
