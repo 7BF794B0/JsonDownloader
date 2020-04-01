@@ -6,10 +6,10 @@ namespace JsonDownloader.Implementations
 {
     class EndPointContextImplementation : IUrl
     {
-        public Url GetUrlContext(string path)
+        public Url GetUrlContext()
         {
             ContextFactory factory = ContextFactory.getInstance();
-            Url s = factory.createUrlContext(path);
+            Url s = factory.createUrlContext();
             return s;
         }
     }

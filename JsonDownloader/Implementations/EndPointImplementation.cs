@@ -19,7 +19,8 @@ namespace JsonDownloader.Implementations
 
         public IStatusCode Download(IDownloadStrategy strategy, IUrl toDownload)
         {
-            throw new System.NotImplementedException();
+            IStatusCode code = strategy.Download(toDownload);
+            return code;
         }
     }
 }
