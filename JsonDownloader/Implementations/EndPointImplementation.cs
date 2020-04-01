@@ -1,4 +1,5 @@
-﻿using JsonDownloader.Interfaces;
+﻿using JsonDownloader.Factories;
+using JsonDownloader.Interfaces;
 
 namespace JsonDownloader.Implementations
 {
@@ -12,7 +13,7 @@ namespace JsonDownloader.Implementations
 
         public IDownloadStrategy GetDownloadStrategy()
         {
-            DownloadStrategyFactory factory = DownloadStrategyFactory.getInstance();
+            DownloadStrategyFactory factory = DownloadStrategyFactory.GetInstance();
             return factory.createIPrintStrategy();
         }
 

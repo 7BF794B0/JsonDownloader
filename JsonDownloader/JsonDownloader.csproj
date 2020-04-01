@@ -41,11 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\StatusCodeImplementation.cs" />
     <Compile Include="Entities\Url.cs" />
     <Compile Include="Exceptions\RuntimeException.cs" />
     <Compile Include="Factories\ContextFactory.cs" />
     <Compile Include="Factories\DownloadStrategyFactory.cs" />
     <Compile Include="Factories\EndPointFactory.cs" />
+    <Compile Include="Implementations\DownloadStrategyImplementation.cs" />
     <Compile Include="Implementations\EndPointImplementation.cs" />
     <Compile Include="Implementations\EndPointContextImplementation.cs" />
     <Compile Include="Interfaces\IDownloadStrategy.cs" />
