@@ -15,9 +15,12 @@ namespace JsonDownloader
 
         public Manager()
         {
+            // TODO: Переделать офк
+            string PATH = @"https://dka-develop.ru/api?type=city";
+
             EndPointFactory factory = EndPointFactory.GetInstance();
             IEndPoint endPoint = factory.CreateEndPoint();
-            IUrl url = endPoint.GetUrl();
+            IUrl url = endPoint.GetUrl(PATH);
             IDownloadStrategy downloadStrategy = endPoint.GetDownloadStrategy();
             IStatusCode code = endPoint.Download(downloadStrategy, url);
             if (code.GetStatusCode() != 0)

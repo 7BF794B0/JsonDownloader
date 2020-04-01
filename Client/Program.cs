@@ -6,7 +6,7 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            Manager mng = new Manager();
+            Manager.instantiateManagerAndRun();
         }
     }
 }

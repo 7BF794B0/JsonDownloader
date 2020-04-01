@@ -5,9 +5,9 @@ namespace JsonDownloader.Implementations
 {
     class EndPointImplementation : IEndPoint
     {
-        public IUrl GetUrl()
+        public IUrl GetUrl(string path)
         {
-            IUrl url = new EndPointContextImplementation();
+            IUrl url = new EndPointContextImplementation(path);
             return url;
         }
 

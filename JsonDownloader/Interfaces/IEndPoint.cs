@@ -2,7 +2,7 @@
 {
     interface IEndPoint
     {
-        IUrl GetUrl();
+        IUrl GetUrl(string path);
 
         IDownloadStrategy GetDownloadStrategy();
 

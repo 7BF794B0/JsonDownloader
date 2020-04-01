@@ -11,9 +11,9 @@ namespace JsonDownloader.Factories
 			return instance;
 		}
 
-		public Url createUrlContext()
+		public Url createUrlContext(string path)
 		{
-			Url s = new Url();
+			Url s = new Url(path);
 			return s;
 		}
 	}
