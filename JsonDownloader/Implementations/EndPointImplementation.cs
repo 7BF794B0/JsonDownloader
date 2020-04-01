@@ -12,7 +12,8 @@ namespace JsonDownloader.Implementations
 
         public IDownloadStrategy GetDownloadStrategy()
         {
-            throw new System.NotImplementedException();
+            DownloadStrategyFactory factory = DownloadStrategyFactory.getInstance();
+            return factory.createIPrintStrategy();
         }
 
         public IStatusCode Download(IDownloadStrategy strategy, IUrl toDownload)
