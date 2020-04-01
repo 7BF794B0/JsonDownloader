@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JsonDownloader;
 
 namespace Client
 {
@@ -10,7 +6,7 @@ namespace Client
     {
         static void Main(string[] args)
         {
-
+            Manager mng = new Manager();
         }
     }
 }

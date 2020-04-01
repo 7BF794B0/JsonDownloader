@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JsonDownloader\JsonDownloader.csproj">
+      <Project>{7336363e-2cde-46f1-ad15-35623cd4ca87}</Project>
+      <Name>JsonDownloader</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
