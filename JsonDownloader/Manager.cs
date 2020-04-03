@@ -22,6 +22,9 @@ namespace JsonDownloader
         {
             EndPointFactory factory1 = EndPointFactory.GetInstance();
             IEndPoint endPoint = factory1.CreateEndPoint();
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // TODO: IUrl ДОЛЖЕН СОДЕРЖАТЬ BODY В ВИДЕ result.Item2
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             IUrl url = endPoint.GetUrl(PATH);
             IDownloadStrategy downloadStrategy = endPoint.GetDownloadStrategy();
             (IStatusCode, string) result = endPoint.Download(downloadStrategy, url);
@@ -34,7 +37,7 @@ namespace JsonDownloader
             {
                 ClassCreatorFactory factory2 = ClassCreatorFactory.GetInstance();
                 IClassCreator classCreator = factory2.CreateClassCreator();
-                IClassCreatorStrategy creatorStrategy = classCreator.GetClassCreatorStrategy();
+                IClassCreatorStrategy creatorStrategy = classCreator.GetClassCreatorStrategy(result.Item2);
                 var res = classCreator.CreateClass(creatorStrategy);
             }
         }

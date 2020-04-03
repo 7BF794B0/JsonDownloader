@@ -10,9 +10,10 @@ namespace JsonDownloader.Implementations
             return factory.CreateClassCreatorStrategy(body);
         }
 
-        public (IStatusCode, string) CreateClass(IClassCreatorStrategy strategy)
+        public object CreateClass(IClassCreatorStrategy strategy)
         {
-            throw new System.NotImplementedException();
+            object result = strategy.CreateClass();
+            return result;
         }
     }
 }

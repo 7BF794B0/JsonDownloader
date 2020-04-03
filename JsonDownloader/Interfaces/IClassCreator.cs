@@ -4,6 +4,6 @@
     {
         IClassCreatorStrategy GetClassCreatorStrategy(string body);
 
-        (IStatusCode, string) CreateClass(IClassCreatorStrategy strategy);
+        object CreateClass(IClassCreatorStrategy strategy);
     }
 }
