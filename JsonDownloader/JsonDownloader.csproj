@@ -51,9 +51,11 @@
     <Compile Include="Factories\ClassCreatorFactory.cs" />
     <Compile Include="Factories\DownloadStrategyFactory.cs" />
     <Compile Include="Factories\EndPointFactory.cs" />
+    <Compile Include="Implementations\ClassCreatorStrategyImplementation.cs" />
     <Compile Include="Implementations\DownloadStrategyImplementation.cs" />
     <Compile Include="Implementations\EndPointImplementation.cs" />
     <Compile Include="Implementations\EndPointContextImplementation.cs" />
+    <Compile Include="Interfaces\IClassCreatorStrategy.cs" />
     <Compile Include="Interfaces\IDeserializer.cs" />
     <Compile Include="Interfaces\IDownloadStrategy.cs" />
     <Compile Include="Interfaces\IEndPoint.cs" />
