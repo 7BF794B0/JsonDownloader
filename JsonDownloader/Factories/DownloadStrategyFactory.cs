@@ -15,13 +15,13 @@ namespace JsonDownloader.Factories
 
 		public IDownloadStrategy CreateDownloadStrategy()
 		{
-			IDownloadStrategy printStrategy = new DownloadStrategyImplementation();
-			IStatusCode code = printStrategy.SetupDownloader();
+			IDownloadStrategy downloadStrategy = new DownloadStrategyImplementation();
+			IStatusCode code = downloadStrategy.SetupDownloader();
 
 			if (code.GetStatusCode() != 0)
-				throw new RuntimeException("Failed to create IPrintStrategy: " + code.GetStatusCode());
+				throw new RuntimeException("Failed to create IDownloadStrategy: " + code.GetStatusCode());
 
-			return printStrategy;
+			return downloadStrategy;
 		}
 	}
 }
