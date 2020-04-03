@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using JsonDownloader;
 
 namespace Client
@@ -7,7 +8,8 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            Manager.InstantiateManagerAndRun(ConfigurationManager.AppSettings["json_url"]);
+            var kek = Manager.InstantiateManagerAndRun(ConfigurationManager.AppSettings["json_url"]);
+            Console.ReadKey();
         }
     }
 }
