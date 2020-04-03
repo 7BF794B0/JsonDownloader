@@ -2,7 +2,7 @@
 {
     interface IClassCreator
     {
-        IClassCreatorStrategy GetClassCreatorStrategy();
+        IClassCreatorStrategy GetClassCreatorStrategy(string body);
 
         (IStatusCode, string) CreateClass(IClassCreatorStrategy strategy);
     }

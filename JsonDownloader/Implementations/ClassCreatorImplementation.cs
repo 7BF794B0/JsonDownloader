@@ -4,9 +4,10 @@ namespace JsonDownloader.Implementations
 {
     class ClassCreatorImplementation : IClassCreator
     {
-        public IClassCreatorStrategy GetClassCreatorStrategy()
+        public IClassCreatorStrategy GetClassCreatorStrategy(string body)
         {
-            throw new System.NotImplementedException();
+            ClassCreatorStrategyFactory factory = ClassCreatorStrategyFactory.GetInstance();
+            return factory.CreateClassCreatorStrategy(body);
         }
 
         public (IStatusCode, string) CreateClass(IClassCreatorStrategy strategy)

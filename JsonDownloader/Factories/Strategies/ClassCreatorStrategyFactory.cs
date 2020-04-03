@@ -5,20 +5,27 @@ namespace JsonDownloader.Implementations
 {
     class ClassCreatorStrategyFactory
     {
+        private static readonly ClassCreatorStrategyFactory _instance = new ClassCreatorStrategyFactory();
+
+        public static ClassCreatorStrategyFactory GetInstance()
+        {
+            return _instance;
+        }
+
         public (IStatusCode, string) CreateClass(IClassCreatorStrategy strategy)
         {
             throw new System.NotImplementedException();
         }
 
-        public IClassCreatorStrategy GetClassCreatorStrategy(string body)
+        public IClassCreatorStrategy CreateClassCreatorStrategy(string body)
         {
-            IClassCreatorStrategy downloadStrategy = new ClassCreatorStrategyImplementation();
-            IStatusCode code = downloadStrategy.SetupClassCreator(body);
+            IClassCreatorStrategy classCreatorStrategy = new ClassCreatorStrategyImplementation();
+            IStatusCode code = classCreatorStrategy.SetupClassCreator(body);
 
             if (code.GetStatusCode() != 0)
                 throw new RuntimeException("Failed to create IDownloadStrategy: " + code.GetStatusCode());
 
-            return downloadStrategy;
+            return classCreatorStrategy;
         }
     }
 }
