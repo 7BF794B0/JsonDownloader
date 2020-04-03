@@ -53,6 +53,7 @@
     <Compile Include="Factories\EndPointFactory.cs" />
     <Compile Include="Factories\Strategies\ClassCreatorStrategyFactory.cs" />
     <Compile Include="Implementations\ClassCreatorImplementation.cs" />
+    <Compile Include="Implementations\Wrappers\DynamicDictionaryWrapper.cs" />
     <Compile Include="Strategies\ClassCreatorStrategyImplementation.cs" />
     <Compile Include="Strategies\DownloadStrategyImplementation.cs" />
     <Compile Include="Implementations\EndPointImplementation.cs" />

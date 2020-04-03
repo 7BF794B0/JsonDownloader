@@ -1,10 +1,6 @@
 ﻿using JsonDownloader.Exceptions;
 using JsonDownloader.Factories;
 using JsonDownloader.Interfaces;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace JsonDownloader
 {
