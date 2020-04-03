@@ -6,18 +6,15 @@ namespace JsonDownloader
 {
     public class Manager
     {
-        private static Manager instance;
+        private static Manager _instance;
 
-        public static void instantiateManagerAndRun()
+        public static void InstantiateManagerAndRun(string path)
         {
-            instance = new Manager();
+            _instance = new Manager(path);
         }
 
-        public Manager()
+        public Manager(string PATH)
         {
-            // TODO: Переделать офк
-            string PATH = @"https://dka-develop.ru/api?type=city";
-
             EndPointFactory factory = EndPointFactory.GetInstance();
             IEndPoint endPoint = factory.CreateEndPoint();
             IUrl url = endPoint.GetUrl(PATH);

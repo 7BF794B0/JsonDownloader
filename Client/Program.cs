@@ -1,4 +1,5 @@
-﻿using JsonDownloader;
+﻿using System.Configuration;
+using JsonDownloader;
 
 namespace Client
 {
@@ -6,7 +7,7 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            Manager.instantiateManagerAndRun();
+            Manager.InstantiateManagerAndRun(ConfigurationManager.AppSettings["json_url"]);
         }
     }
 }
