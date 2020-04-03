@@ -13,7 +13,7 @@ namespace JsonDownloader.Factories
 			return instance;
 		}
 
-		public IDownloadStrategy createIPrintStrategy()
+		public IDownloadStrategy CreateDownloadStrategy()
 		{
 			IDownloadStrategy printStrategy = new DownloadStrategyImplementation();
 			IStatusCode code = printStrategy.SetupDownloader();

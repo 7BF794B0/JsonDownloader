@@ -14,7 +14,7 @@ namespace JsonDownloader.Implementations
         public IDownloadStrategy GetDownloadStrategy()
         {
             DownloadStrategyFactory factory = DownloadStrategyFactory.GetInstance();
-            return factory.createIPrintStrategy();
+            return factory.CreateDownloadStrategy();
         }
 
         public (IStatusCode, string) Download(IDownloadStrategy strategy, IUrl toDownload)
