@@ -4,6 +4,6 @@
     {
         IStatusCode SetupDownloader();
 
-        IStatusCode Download(IUrl str);
+        (IStatusCode, string) Download(IUrl str);
     }
 }

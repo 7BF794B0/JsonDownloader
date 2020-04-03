@@ -6,6 +6,6 @@
 
         IDownloadStrategy GetDownloadStrategy();
 
-        IStatusCode Download(IDownloadStrategy strategy, IUrl toDownload);
+        (IStatusCode, string) Download(IDownloadStrategy strategy, IUrl toDownload);
     }
 }

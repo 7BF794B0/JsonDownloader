@@ -19,10 +19,14 @@ namespace JsonDownloader
             IEndPoint endPoint = factory.CreateEndPoint();
             IUrl url = endPoint.GetUrl(PATH);
             IDownloadStrategy downloadStrategy = endPoint.GetDownloadStrategy();
-            IStatusCode code = endPoint.Download(downloadStrategy, url);
-            if (code.GetStatusCode() != 0)
+            (IStatusCode, string) result = endPoint.Download(downloadStrategy, url);
+            if (result.Item1.GetStatusCode() != 0)
             {
-                throw new RuntimeException("Failed to download: " + code.GetStatusCode());
+                throw new RuntimeException("Failed to download: " + result.Item1.GetStatusCode());
+            }
+            else
+            {
+                System.Console.WriteLine(result.Item2);
             }
         }
     }

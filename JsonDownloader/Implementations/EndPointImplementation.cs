@@ -17,10 +17,10 @@ namespace JsonDownloader.Implementations
             return factory.createIPrintStrategy();
         }
 
-        public IStatusCode Download(IDownloadStrategy strategy, IUrl toDownload)
+        public (IStatusCode, string) Download(IDownloadStrategy strategy, IUrl toDownload)
         {
-            IStatusCode code = strategy.Download(toDownload);
-            return code;
+            (IStatusCode, string) result = strategy.Download(toDownload);
+            return (result.Item1, result.Item2);
         }
     }
 }

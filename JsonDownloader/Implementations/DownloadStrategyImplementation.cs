@@ -9,16 +9,16 @@ namespace JsonDownloader.Implementations
 	{
 		private WebClient wc;
 
-		public IStatusCode Download(IUrl str)
+		public (IStatusCode, string) Download(IUrl str)
 		{
 			try
 			{
 				var json = wc.DownloadString(str.GetUrlContext().UrlStr);
-				return new StatusCodeImplementation(0);
+				return (new StatusCodeImplementation(0), json);
 			}
 			catch (Exception e)
 			{
-				return new StatusCodeImplementation(-1);
+				return (new StatusCodeImplementation(-1), null);
 			}
 		}
 
