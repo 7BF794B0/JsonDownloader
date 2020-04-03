@@ -15,7 +15,7 @@ namespace JsonDownloader.Implementations
         {
             List<Dictionary<string, JToken>> lst = new List<Dictionary<string, JToken>>();
 
-            dynamic stuff = JsonConvert.DeserializeObject(result.Item2);
+            dynamic stuff = JsonConvert.DeserializeObject(_body);
 
             foreach (JObject jObj in stuff)
             {
