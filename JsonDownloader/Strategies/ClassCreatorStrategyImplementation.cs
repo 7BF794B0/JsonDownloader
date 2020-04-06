@@ -11,13 +11,11 @@ namespace JsonDownloader.Implementations
 {
     class ClassCreatorStrategyImplementation : IClassCreatorStrategy
     {
-        private string _body;
-
-        public object CreateClass()
+        public object CreateClass(IUrl url)
         {
             List<Dictionary<string, dynamic>> lst = new List<Dictionary<string, dynamic>>();
 
-            dynamic stuff = JsonConvert.DeserializeObject(_body);
+            dynamic stuff = JsonConvert.DeserializeObject(url.GetUrlContext().Body);
 
             foreach (JObject jObj in stuff)
             {
@@ -26,7 +24,7 @@ namespace JsonDownloader.Implementations
                 var rootProperties = jObj.Children().OfType<JProperty>().Select(p => p.Name).ToArray();
                 foreach (var property in rootProperties)
                 {
-                    dict.Add(property, jObj.Property(property).Value);
+                    dict.Add(property, jObj.Property(property).Value.ToString());
                 }
                 lst.Add(dict);
             }
@@ -34,11 +32,10 @@ namespace JsonDownloader.Implementations
             return (from l in lst select new DynamicDictionaryWrapper(l)).ToList();
         }
 
-        public IStatusCode SetupClassCreator(string body)
+        public IStatusCode SetupClassCreator()
         {
             try
             {
-                _body = body;
                 return new StatusCodeImplementation(0);
             }
             catch (Exception e)

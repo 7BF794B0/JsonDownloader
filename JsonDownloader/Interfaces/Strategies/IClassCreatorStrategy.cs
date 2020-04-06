@@ -2,8 +2,8 @@
 {
     interface IClassCreatorStrategy
     {
-        IStatusCode SetupClassCreator(string body);
+        IStatusCode SetupClassCreator();
 
-        object CreateClass();
+        object CreateClass(IUrl url);
     }
 }

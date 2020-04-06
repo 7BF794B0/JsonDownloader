@@ -33,8 +33,9 @@ namespace JsonDownloader
             {
                 ClassCreatorFactory factory2 = ClassCreatorFactory.GetInstance();
                 IClassCreator classCreator = factory2.CreateClassCreator();
-                IClassCreatorStrategy creatorStrategy = classCreator.GetClassCreatorStrategy(result.Item2);
-                var res = classCreator.CreateClass(creatorStrategy);
+                url.SetBody(result.Item2);
+                IClassCreatorStrategy creatorStrategy = classCreator.GetClassCreatorStrategy();
+                var res = classCreator.CreateClass(creatorStrategy, url);
             }
         }
     }

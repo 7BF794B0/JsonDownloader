@@ -2,8 +2,8 @@
 {
     interface IClassCreator
     {
-        IClassCreatorStrategy GetClassCreatorStrategy(string body);
+        IClassCreatorStrategy GetClassCreatorStrategy();
 
-        object CreateClass(IClassCreatorStrategy strategy);
+        object CreateClass(IClassCreatorStrategy strategy, IUrl url);
     }
 }

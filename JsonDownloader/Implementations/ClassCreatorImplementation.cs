@@ -4,15 +4,15 @@ namespace JsonDownloader.Implementations
 {
     class ClassCreatorImplementation : IClassCreator
     {
-        public IClassCreatorStrategy GetClassCreatorStrategy(string body)
+        public IClassCreatorStrategy GetClassCreatorStrategy()
         {
             ClassCreatorStrategyFactory factory = ClassCreatorStrategyFactory.GetInstance();
-            return factory.CreateClassCreatorStrategy(body);
+            return factory.CreateClassCreatorStrategy();
         }
 
-        public object CreateClass(IClassCreatorStrategy strategy)
+        public object CreateClass(IClassCreatorStrategy strategy, IUrl url)
         {
-            object result = strategy.CreateClass();
+            object result = strategy.CreateClass(url);
             return result;
         }
     }

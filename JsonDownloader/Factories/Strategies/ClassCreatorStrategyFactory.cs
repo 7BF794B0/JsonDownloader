@@ -17,10 +17,10 @@ namespace JsonDownloader.Implementations
             throw new System.NotImplementedException();
         }
 
-        public IClassCreatorStrategy CreateClassCreatorStrategy(string body)
+        public IClassCreatorStrategy CreateClassCreatorStrategy()
         {
             IClassCreatorStrategy classCreatorStrategy = new ClassCreatorStrategyImplementation();
-            IStatusCode code = classCreatorStrategy.SetupClassCreator(body);
+            IStatusCode code = classCreatorStrategy.SetupClassCreator();
 
             if (code.GetStatusCode() != 0)
                 throw new RuntimeException("Failed to create IDownloadStrategy: " + code.GetStatusCode());

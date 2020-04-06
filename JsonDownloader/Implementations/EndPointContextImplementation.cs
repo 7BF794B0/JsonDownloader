@@ -7,6 +7,7 @@ namespace JsonDownloader.Implementations
     class EndPointContextImplementation : IUrl
     {
         private readonly string _path;
+        private string _body;
 
         public EndPointContextImplementation(string path)
         {
@@ -15,9 +16,14 @@ namespace JsonDownloader.Implementations
 
         public Url GetUrlContext()
         {
-            ContextFactory factory = ContextFactory.getInstance();
-            Url s = factory.createUrlContext(_path);
-            return s;
+            ContextFactory factory = ContextFactory.GetInstance();
+            Url u = factory.CreateUrlContext(_path, _body);
+            return u;
+        }
+
+        public void SetBody(string body)
+        {
+            _body = body;
         }
     }
 }

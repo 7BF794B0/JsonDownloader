@@ -4,16 +4,16 @@ namespace JsonDownloader.Factories
 {
     class ContextFactory
     {
-		private static ContextFactory instance = new ContextFactory();
+		private static readonly ContextFactory _instance = new ContextFactory();
 
-		public static ContextFactory getInstance()
+		public static ContextFactory GetInstance()
 		{
-			return instance;
+			return _instance;
 		}
 
-		public Url createUrlContext(string path)
+		public Url CreateUrlContext(string path, string body)
 		{
-			Url s = new Url(path);
+			Url s = new Url(path, body);
 			return s;
 		}
 	}
