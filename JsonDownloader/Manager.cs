@@ -18,9 +18,6 @@ namespace JsonDownloader
         {
             EndPointFactory factory1 = EndPointFactory.GetInstance();
             IEndPoint endPoint = factory1.CreateEndPoint();
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            // TODO: IUrl ДОЛЖЕН СОДЕРЖАТЬ BODY В ВИДЕ result.Item2
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             IUrl url = endPoint.GetUrl(PATH);
             IDownloadStrategy downloadStrategy = endPoint.GetDownloadStrategy();
             (IStatusCode, string) result = endPoint.Download(downloadStrategy, url);

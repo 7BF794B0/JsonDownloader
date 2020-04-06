@@ -12,11 +12,6 @@ namespace JsonDownloader.Implementations
             return _instance;
         }
 
-        public (IStatusCode, string) CreateClass(IClassCreatorStrategy strategy)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public IClassCreatorStrategy CreateClassCreatorStrategy()
         {
             IClassCreatorStrategy classCreatorStrategy = new ClassCreatorStrategyImplementation();

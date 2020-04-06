@@ -6,11 +6,11 @@ namespace JsonDownloader.Factories
 {
     class DownloadStrategyFactory
     {
-		private static DownloadStrategyFactory instance = new DownloadStrategyFactory();
+		private static readonly DownloadStrategyFactory _instance = new DownloadStrategyFactory();
 
 		public static DownloadStrategyFactory GetInstance()
 		{
-			return instance;
+			return _instance;
 		}
 
 		public IDownloadStrategy CreateDownloadStrategy()
